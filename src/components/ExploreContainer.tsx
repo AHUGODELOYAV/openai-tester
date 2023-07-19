@@ -19,6 +19,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const OPENAI_API_KEY = "sk-put-your-own-key";
+const OPENAI_ORGANIZATION_KEY = "org-put-your-own-org-key";
 
 const ExploreContainer: React.FC = () => {
   const [chatGPTAnswer, setChatGPTAnswer] = useState<
@@ -29,7 +30,7 @@ const ExploreContainer: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const configuration = new Configuration({
-    organization: "org-put-your-own-org-key",
+    organization: OPENAI_ORGANIZATION_KEY,
     apiKey: OPENAI_API_KEY,
   });
   delete configuration.baseOptions.headers["User-Agent"];
